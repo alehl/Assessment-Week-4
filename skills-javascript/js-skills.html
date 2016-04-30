@@ -225,12 +225,17 @@ function popUp() {
 </p>
 
 <fieldset>
-  <input type="button" class="tricky-to-find" value="Pop-Up Please!">
+  <input type="button" class="tricky-to-find" id="missing-id" value="Pop-Up Please!">
 </fieldset>
 
 <script>
-  // code here for above problem
+    var getByClass = document.getElementsByClassName('tricky-to-find')[0]
+    getByClass.addEventListener('click', function(event){
+      event.preventDefault();
+      alert("Yay-Query Greets you this Saturday morning... (is this jQuery?)");
+  })
 </script>
+
 
 <div class="hint">
   <div>
