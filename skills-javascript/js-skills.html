@@ -155,7 +155,18 @@ function popUp() {
 </fieldset>
 
 <script>
-  // code here for above problem
+    var submitForm = document.getElementById("prevent-form-submission-form");
+    var btn = document.getElementById("prevent-form-submission-button");
+
+    function blockSubmission() {
+      submitForm.removeAttribute("action");
+      btn.addEventListener("click", stopMessage);
+      function stopMessage () {
+        alert("STOP - Don't submit!");
+      };
+    }
+
+  btn.addEventListener("mouseover", blockSubmission);
 </script>
 
 <div class="hint">
