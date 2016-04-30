@@ -117,7 +117,16 @@ function popUp() {
 </fieldset>
 
 <script>
-  // code here for above-problem
+
+    var greeting = document.getElementById("message-to-change");
+    var button = document.getElementById("change-hello-to-goodbye-button")
+
+    function changeMessage() {
+      greeting.innerText = "Goodbye";
+    }
+
+  button.addEventListener("click", changeMessage);
+
 </script>
 
 <div class="hint">
