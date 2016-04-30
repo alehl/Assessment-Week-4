@@ -260,8 +260,11 @@ function popUp() {
        alt="Adorbz" id="kittenz-rule">
 </fieldset>
 
+
+<script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
 <script>
-  // put your code here
+  var catPic = $("img#kittenz-rule");
+  catPic.on("dblclick", function(){catPic.attr("src", "http://www.drawingcoach.com/image-files/cartoon_cow_st6.gif");});
 </script>
 
 <div class="hint">
@@ -293,8 +296,18 @@ function popUp() {
   <input type="button" id="make-a-porcupine" value="I Want a Porcupine!">
 </fieldset>
 
+
 <script>
-  // put your code here
+  var buttonId = $("#make-a-porcupine");
+  var furBall = $("#cute-porcupine-image");
+
+  function animatedPorcupine () {
+    setTimeout(puercoEspin);
+  }
+  function puercoEspin() {
+    furBall.fadeIn(5000);
+  }
+  buttonId.on("click", animatedPorcupine);
 </script>
 
 <div class="hint">
