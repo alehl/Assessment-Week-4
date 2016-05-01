@@ -19,10 +19,13 @@
 
 -- 5. Select all rows for the three oldest brands
 --    from the Brands table (Hint: you can use LIMIT and ORDER BY).
-    SELECT * FROM Brands ORDER BY founded LIMIT 3;
+    SELECT * FROM brands ORDER BY founded LIMIT 3;
+
 -- 6. Count the Ford models in the database (output should be a number).
+    SELECT COUNT(*) FROM models WHERE brand_name LIKE 'Ford%';
 
 -- 7. Select the name of any and all car brands that are not discontinued.
+    SELECT name FROM brands WHERE discontinued IS NULL;
 
 -- 8. Select rows 15-25 of the DB in alphabetical order by model name.
 
