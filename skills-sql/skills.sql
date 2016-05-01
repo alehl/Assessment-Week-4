@@ -28,6 +28,8 @@
     SELECT name FROM brands WHERE discontinued IS NULL;
 
 -- 8. Select rows 15-25 of the DB in alphabetical order by model name.
+    SELECT * FROM brands WHERE id BETWEEN 15 AND 25 ORDER BY name;
+    SELECT * FROM models WHERE id BETWEEN 15 AND 25 ORDER BY name;
 
 -- 9. Select the brand, name, and year the model's brand was
 --    founded for all of the models from 1960. Include row(s)
