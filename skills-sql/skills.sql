@@ -55,6 +55,11 @@
     --     ON b.name = m.brand_name
     -- WHERE b.discontinued IS NULL;
 
+    SELECT brands.name, models.brand_name, brands.discontinued
+    FROM brands JOIN models
+    ON brands.name = models.brand_name
+    WHERE brands.discontinued IS NULL;
+
 -- 2. Modify this left join so it only selects models that have brands in the Brands table.
 -- before:
     -- SELECT m.name,
@@ -63,9 +68,13 @@
     -- FROM Models AS m
     --   LEFT JOIN Brands AS b
     --     ON b.name = m.brand_name;
+    SELECT models.brand_name, brands.name FROM models
+    LEFT JOIN brands ON brands.name = models.brand_name;
 
 -- followup question: In your own words, describe the difference between
 -- left joins and inner joins.
+    "Inner joins display all rows that have something in common with the content from other tables, and left joins
+    show all the rows from the left table and whatever matches from the right table, including whatever is 'null'."
 
 -- 3. Modify the query so that it only selects brands that don't have any models in the models table.
 -- (Hint: it should only show Tesla's row.)
@@ -91,7 +100,7 @@
     -- WHERE b.discontinued NOT NULL;
 
 
-
+-- *****************************************I don't know what to do here...*****************************************"
 
 -- Part 3: Further Study
 
