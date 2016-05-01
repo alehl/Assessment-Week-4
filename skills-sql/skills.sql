@@ -37,7 +37,8 @@
 --    (The year the brand was founded should be NULL if
 --    the brand is not in the Brands table.)
 
-
+    SELECT brand_name, models.name, founded FROM models FULL JOIN brands
+    ON brands.name = brand_name WHERE year = 1960;
 
 -- Part 2: Change the following queries according to the specifications.
 -- Include the answers to the follow up questions in a comment below your
