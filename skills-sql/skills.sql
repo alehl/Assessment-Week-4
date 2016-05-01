@@ -104,41 +104,50 @@
     --     ON m.brand_name = b.name
     -- WHERE b.discontinued NOT NULL;
 
-
-*****************************************I dont know what to do here...*****************************************"
+***** YEAH... Dont know what to do here :( ****
 
 -- Part 3: Further Study
 
 -- 1. Select the name of any brand with more than 5 models in the database.
+    SELECT name, COUNT(name) AS occurences FROM models 
+    GROUP BY name ORDER BY occurences OFFSET 26;
 
 -- 2. Add the following rows to the Models table.
-
-.. FIXME
-    example here has name and brand_name backwards. Instructions are ambiguous.
 
 -- year    name       brand_name
 -- ----    ----       ----------
 -- 2015    Chevrolet  Malibu
 -- 2015    Subaru     Outback
 
+    INSERT INTO models (year, name, brand_name)
+    VALUES(2015, 'Chevrolet', 'Malibu');
+    INSERT 0 1
+    INSERT INTO models (year, name, brand_name)
+    VALUES(2015,'Subaru', 'Outback');
+    INSERT 0 1
+
 -- 3. Write a SQL statement to crate a table called `Awards`
 --    with columns `name`, `year`, and `winner`. Choose
 --    an appropriate datatype and nullability for each column
 --   (no need to do subqueries here).
+    CREATE TABLE awards(
+        name VARCHAR(20),
+        year DATE,
+        winner BOOLEAN DEFAULT True);
 
 -- 4. Write a SQL statement that adds the following rows to the Awards table:
-
-.. FIXME
-    These instructions no longer match with the solution or the .rst instructions
 
 --   name                 year      winner_model_id
 --   ----                 ----      ---------------
 --   IIHS Safety Award    2015      the id for the 2015 Chevrolet Malibu
 --   IIHS Safety Award    2015      the id for the 2015 Subaru Outback
 
+    ***I dont know how to do this one...***
+
 -- 5. Using a subquery, select only the *name* of any model whose
 -- year is the same year that *any* brand was founded.
-
+    SELECT models.name FROM models WHERE models.year 
+    IN (SELECT brands.founded FROM brands);
 
 
 
