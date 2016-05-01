@@ -86,10 +86,10 @@
     --     ON brands.name = Models.brand_name
     -- WHERE Models.year > 1940;
 
-    SELECT models.brand_name, brands.name FROM models 
-    LEFT JOIN brands ON models.brand_name = brands.name WHERE models.brand_name IS NULL;
+    SELECT models.brand_name, brands.name FROM brands
+    LEFT JOIN models ON models.brand_name = brands.name WHERE models.brand_name IS NULL;
 
-    ****WHY AM I NOT GETTING ANYTHING :/???***
+
 
 -- 4. Modify the query to add another column to the results to show
 -- the number of years from the year of the model until the brand becomes discontinued
